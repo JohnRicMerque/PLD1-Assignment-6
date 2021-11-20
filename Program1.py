@@ -2,12 +2,19 @@
 # Create a program that ask 4 numbers. 
 # Print the 4 numbers from highest to lowest using only if-else statement.
 
-# Asking user for input 
+# Asking user for input and validating it
 def askFourNum():
-    num1 = float(input("Enter 1st number: "))
-    num2 = float(input("Enter 2nd number: "))
-    num3 = float(input("Enter 3rd number: "))
-    num4 = float(input("Enter 4th number: "))
+    while True:
+        try:
+            num1 = float(input("Enter 1st number: "))
+            num2 = float(input("Enter 2nd number: "))
+            num3 = float(input("Enter 3rd number: "))
+            num4 = float(input("Enter 4th number: "))
+        except ValueError:
+            print("Invalid Input. Please enter a number.")
+            continue
+        else:
+            break
     return num1, num2, num3, num4
 
 # Function to arrange four numbers from highest to lowest
