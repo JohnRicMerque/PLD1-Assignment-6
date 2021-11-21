@@ -7,8 +7,8 @@
 import random
 
 # addition function
-def add(nums):
-    print(f"{nums[0]} + {nums[1]}")
+def add(nums, itemNum):
+    print(f"{itemNum + 1}. {nums[0]} + {nums[1]}")
 
 # returns answer to the question
 def getAnswer(nums):
@@ -28,8 +28,10 @@ def userInput():
 # checking
 def check(rightAnswer, userAnswer):
     if rightAnswer == userAnswer:
+        print("Your answer is CORRECT")
         return 1
-    else: 
+    else:
+        print("Your answer is WRONG") 
         return 0
 
 # displaying the score
@@ -46,7 +48,7 @@ items = 0
 # looping the process
 while items != 10:
     twoNums = random2()
-    question = add(twoNums)
+    question = add(twoNums, items)
     userAns = userInput()
     rightAns = getAnswer(twoNums)
     rightAnswers += check(rightAns, userAns)
