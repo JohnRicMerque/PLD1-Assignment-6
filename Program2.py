@@ -22,16 +22,23 @@ def random2():
 
 # asking user for answer
 def userInput():
-    userInput = float(input("Enter your answer: "))
+    while True:
+        try:
+            userInput = float(input("Enter your answer: "))
+        except ValueError:
+            print("Invalid Input. Please enter a number.")
+            continue
+        else:
+            break
     return userInput
 
 # checking
 def check(rightAnswer, userAnswer):
     if rightAnswer == userAnswer:
-        print("Your answer is CORRECT")
+        print("Your answer is CORRECT.")
         return 1
     else:
-        print("Your answer is WRONG") 
+        print("Your answer is WRONG.") 
         return 0
 
 # displaying the score
@@ -41,6 +48,10 @@ def displayScore(rightAnsNum,itemsNum):
     print("---------------------------------")
     print(f"You got {rightAnsNum}/{itemsNum}")
 
+# program introduction
+print("-------------------------------------")
+print("Hello user, Welcome to Addition Quiz")
+print("-------------------------------------")
 # initial declaration of items and answers to 0
 rightAnswers = 0
 items = 0
