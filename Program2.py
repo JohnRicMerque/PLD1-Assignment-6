@@ -26,14 +26,20 @@ def userInput():
     return userInput
 
 def check(rightAnswer, userAnswer):
-    if rightAnswer == userAnswer:   
-        print("Answer is correct")
-    else:
-        print("Answer is wrong")
+    if rightAnswer == userAnswer:
+        return 1
+    else: 
+        return 0
 
-# program start
-twoNums = random2()
-question = add(twoNums)
-rightAns = getAnswer(twoNums)
-userAns = userInput()
-check(rightAns, userAns)
+# initial declaration of items and answers to 0
+rightAnswers = 0
+items = 0
+
+# looping the process
+while items != 10:
+    twoNums = random2()
+    question = add(twoNums)
+    userAns = userInput()
+    rightAns = getAnswer(twoNums)
+    rightAnswers += check(rightAns, userAns)
+    items += 1
