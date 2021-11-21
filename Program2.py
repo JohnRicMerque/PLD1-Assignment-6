@@ -6,7 +6,7 @@
 
 import random
 
-# addition function
+# displays the addition question
 def add(nums, itemNum):
     print(f"{itemNum + 1}. {nums[0]} + {nums[1]}")
 
@@ -15,12 +15,12 @@ def getAnswer(nums):
     sum = nums[0] + nums[1]
     return sum
 
-# generating random two numbers from 0 to 99
+# generating two random numbers from 0 to 99
 def random2():
     randomNums = random.sample(range(0, 99), 2)
     return randomNums
 
-# asking user for answer
+# asking user for answer and validating it
 def userInput():
     while True:
         try:
@@ -47,11 +47,14 @@ def displayScore(rightAnsNum,itemsNum):
     print("RESULTS")
     print("---------------------------------")
     print(f"You got {rightAnsNum}/{itemsNum}")
+    totalScorePercentage = int((rightAnsNum/itemsNum) * 100)
+    print(f"Your percentage score is " + str(totalScorePercentage) + "%")
 
 # program introduction
 print("-------------------------------------")
 print("Hello user, Welcome to Addition Quiz")
 print("-------------------------------------")
+
 # initial declaration of items and answers to 0
 rightAnswers = 0
 items = 0
