@@ -20,8 +20,20 @@ def random2():
     randomNums = random.sample(range(0, 99), 2)
     return randomNums
 
+# asking user for answer
+def userInput():
+    userInput = float(input("Enter your answer: "))
+    return userInput
+
+def check(rightAnswer, userAnswer):
+    if rightAnswer == userAnswer:   
+        print("Answer is correct")
+    else:
+        print("Answer is wrong")
+
 # program start
 twoNums = random2()
 question = add(twoNums)
 rightAns = getAnswer(twoNums)
-print(rightAns)
+userAns = userInput()
+check(rightAns, userAns)
