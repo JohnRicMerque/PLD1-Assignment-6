@@ -25,11 +25,19 @@ def userInput():
     userInput = float(input("Enter your answer: "))
     return userInput
 
+# checking
 def check(rightAnswer, userAnswer):
     if rightAnswer == userAnswer:
         return 1
     else: 
         return 0
+
+# displaying the score
+def displayScore(rightAnsNum,itemsNum):
+    print("---------------------------------")
+    print("RESULTS")
+    print("---------------------------------")
+    print(f"You got {rightAnsNum}/{itemsNum}")
 
 # initial declaration of items and answers to 0
 rightAnswers = 0
@@ -43,3 +51,6 @@ while items != 10:
     rightAns = getAnswer(twoNums)
     rightAnswers += check(rightAns, userAns)
     items += 1
+
+# calling function to display scores
+displayScore(rightAnswers, items)
